@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body style="font-family: 'Poor Story'">
+  
+
+<!-- NAV BAR -->
+ 
+  <div class="row">
+    <div class="col-md-2 line_nav" style=" margin-left: 10px; z-index: 1;">
+      
+      
+
+      <div class="sidenav" style="padding:10px; z-index: 1;">
+        <center>
+          <!-- <i class="fa fa-cubes subjudulgerak" style="font-size:36px"></i> -->
+          <center><img class="logo" src="./image/logo-bps.png" alt=""></center>
+          <center><img class="logo" src="./image/Logo-Dashboard-PPIS.png" alt=""></center>
+    
+          <span style="font-size: 9pt; color: white;">Provinsi Sumatera Utara</span>
+          <br><br><br>
+          <button class="menu home" onclick="document.location='home.html'">
+            <h5></h5>
+          </button>
+          <button class="menu progresstim" onclick="document.location='progresstim.html'">
+            <h5></h5>
+          </button>
+          <button class="menu progress" onclick="document.location='progresskegiatan.html'">
+            <h5></h5>
+          </button>
+          
+        </center>
+       </div>
+       
+    </div>
+   </div>
+   <div class="area" style="z-index: -1;">
+    <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+    </ul>
+  </div >
+   <div class="b_melayang">
+    <button class="i_b_melayang" onclick="document.location='home.html'"><h5>Home</h5></button>
+    <button class="i_b_melayang" onclick="document.location='progresstim.html'"><h5>Progress Tim</h5></button>
+    <button class="i_b_melayang" onclick="document.location='progresskegiatan.html'"><h5>Progress Kegiatan</h5></button>
+   </div>
+  <br>
+
+
+    <!-- AKHIR NAV BAR -->
+
+<style>
+  .line_nav{
+    height: 100vh;
+    position: fixed;
+  }
+  button:hover{
+    background-color: blue;
+    color: white;
+  }
+  .menu{
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px; 
+    width: 100%; 
+    background-color: #ffffff;
+    color: black;
+    border-color: #000;
+    height: 60px;
+    z-index: 1;
+    /* border-radius: 10px; */
+    border: 0;
+    /* margin-top: -30px; */
+    /* display: inline-block; */
+    /* border-radius: 10px; */
+  }
+  .home{
+    background: url(./image/bt_home.png);
+    background-repeat: no-repeat;
+    background-size: 90%;
+  }
+
+  .home:hover{
+    background: url(./image/bt_home1.png);
+    background-repeat: no-repeat;
+    background-size: 90%;
+  }
+
+  .progress{
+    background: url(./image/bt_progres.png);
+    background-repeat: no-repeat;
+    background-size: 90%;
+  }
+
+  .progress:hover{
+    background: url(./image/bt_progres1.png);
+    background-repeat: no-repeat;
+    background-size: 90%;
+  }
+
+  .progresstim{
+    background: url(./image/bt_progrestim.png);
+    background-repeat: no-repeat;
+    background-size: 90%;
+  }
+
+  .progresstim:hover{
+    background: url(./image/bt_progrestim1.png);
+    background-repeat: no-repeat;
+    background-size: 90%;
+  }
+
+  .menu:hover{
+    /* background-color: #3e8e41; */
+    color: white;
+  }
+  .logo{
+    width: 100%;
+  }
+</style>
+</body>
+</html>

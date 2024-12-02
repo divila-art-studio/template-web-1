@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Monitoring Kegiatan BPS Provinsi Sumatera Utara</title>
+    <link rel="icon" type="image/x-icon" href="./image/favicon.ico">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Poor+Story' rel='stylesheet'> -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- FAFONT -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- GRAFIK APEXCHART -->
+     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+     
+     <!-- REACT JS -->
+     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
+     <!-- ANIMATE ON SCROLL -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <!-- JQUERY -->
+     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+     <!-- BOOTSTRAP -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+     <script type="text/javascript">
+      $(function() {
+         $("#header_menu").load("nav.html");
+      });
+   </script>
+   <script>
+    let login_auth = sessionStorage.getItem("status");
+    if (login_auth==null) {
+      location.replace("login.html");
+    } else if (login_auth!=null){
+    }
+   </script>
+     
+     
+</head>
+<body style="font-size: 14pt; background-color: #F2F3F8;">
+  <div class="row">
+    
+    <div class="col-md-2"  id="header_menu" style="background-color: #0E022A;"></div>
+    <div class="col-md-10" >
+      <br>
+      &rarr; Home
+      <br><br>
+      <div class="memuat">
+        <p id="p_memuat">Sedang Memuat. . . </p>
+      </div>
+      
+      <center><h2><i style="background-color: #0E022A; color: white; border-radius: 5px; padding: 10px;">Highlight</i> Monitoring</h2></center>
+      <br>
+      <div class="row" style="margin-left: 5px; margin-right: 5px; font-size: 14pt;">
+        <div class="col-md-3 card kotak">
+          Capaian Total Kegiatan<br><hr style="margin-top: 20px; height: 3px; background-color: orangered; width: 100%;">
+            <span id="k1">0</span>
+        </div>
+        <div class="col-md-3 card kotak">
+          Jumlah Kegiatan<br><hr style="margin-top: 20px; height: 3px; background-color: orangered; width: 100%;">
+            <span id="k2"></span><span>Kegiatan</span>
+        </div>
+        <div class="col-md-3 card kotak">
+          Jumlah Subkegiatan<br><hr style="margin-top: 20px; height: 3px; background-color: orangered; width: 100%;">
+            <span id="k3"></span>
+        </div>
+        <div class="col-md-3 card kotak">
+          Rata-rata Subkegiatan/Kegiatan<br><hr style="margin-top: 20px; height: 3px; background-color: orangered; width: 100%;">
+            <span id="k4"></span>
+        </div>
+      </div>
+      <br>
+
+      <div class="row" style="margin-left: 5px; margin-right: 5px; font-size: 14pt;">
+        <div class="col-md-3 card kotak">
+          Jumlah Kegiatan <br>(Capaian 100%)<br><hr style="margin-top: 20px; height: 3px; background-color: #358F8B; width: 100%;">
+            <span id="k7"></span>
+            <button style="font-size: 9pt;" type="button" class="i_b_home" data-toggle="modal" data-target="#myModal100">Selengkapnya</button><br>
+        </div>
+        <div class="col-md-3 card kotak">
+          Jumlah Kegiatan <br>(Capaian 60-99%)<br><hr style="margin-top: 20px; height: 3px; background-color: #358F8B; width: 100%;">
+            <span id="k8"></span>
+            <button style="font-size: 9pt;" type="button" class="i_b_home" data-toggle="modal" data-target="#myModal60">Selengkapnya</button><br>
+        </div>
+        <div class="col-md-3 card kotak">
+          Jumlah Kegiatan <br>(Capaian 30-60%)<br><hr style="margin-top: 20px; height: 3px; background-color: #358F8B; width: 100%;">
+            <span id="k9"></span>
+            <button style="font-size: 9pt;" type="button" class="i_b_home" data-toggle="modal" data-target="#myModal30">Selengkapnya</button><br>
+        </div>
+        <div class="col-md-3 card kotak">
+          Jumlah Kegiatan <br>(Capaian <30%) <br><hr style="margin-top: 20px; height: 3px; background-color: #358F8B; width: 100%;">
+            <span id="k10"></span>
+            <button style="font-size: 9pt;" type="button" class="i_b_home" data-toggle="modal" data-target="#myModal0">Selengkapnya</button><br>
+        </div>
+      </div>
+    
+      <br><br><hr><br>
+      <center><h2><i style="background-color: #0E022A; color: white; border-radius: 5px; padding: 10px;">Highlight</i> Kegiatan BPS Provinsi Sumatera Utara</h2></center>
+      <br>
+      <div class="row" style="margin-left: 5px; margin-right: 5px;">
+        <div class="col-md-3 card"><br>
+          <center><h4>Kegiatan dengan Subkegiatan Terbanyak</h4></center><br>
+            <span id="k5" style="letter-spacing: 0px; font-size: 11pt; font-weight: 100; text-align: left;"></span>
+        </div>
+        <div class="col-md-3 card"><br>
+          <center><h4>Kegiatan dengan Subkegiatan Tersedikit</h4></center><br>
+          <span id="k6" style="letter-spacing: 0px; font-size: 11pt; font-weight: 100; text-align: left;"></span>
+        </div>
+        <div class="col-md-3 card"><br>
+          <center><h4>Kegiatan dengan Realisasi Tertinggi</h4></center><br>
+          <span id="k11" style="letter-spacing: 0px; font-size: 11pt; font-weight: 100; text-align: left;"></span>
+        </div>
+        <div class="col-md-3 card"><br>
+          <center><h4>Kegiatan dengan Realisasi Terendah</h4></center><br>
+          <span id="k12" style="letter-spacing: 0px; font-size: 11pt; font-weight: 100; text-align: left;"></span>
+        </div>
+      </div>
+      <br><br>
+      
+
+      <hr>
+      <br>
+      <button id="tlb" onclick="b_tlb();" style="font-size: 12pt; width: 100%; height: 50px;" type="button" class="btn btn-info" data-toggle="collapse" data-target="#muncul_tabel">Tampilkan Lebih Banyak</button>
+      <br><br>
+      <div id="muncul_tabel" class="collapse">
+        <center><h2><span style="background-color: #0E022A; color: white; border-radius: 5px; padding: 10px;"><i>Progress</i></span> Tim Kerja Menurut Kegiatan BPS Provinsi Sumatera Utara</h2></center>
+        <br>
+
+      <div style="padding: 20px; font-size: 12pt;" class="card" id="d_progress">
+        
+      </div>
+      </div>
+      
+       <br><br><br><br><br><br><br><br><br><br>
+
+       <div class="footer">
+        <center>
+          <b>Copyright © 2025 BPS Provinsi Sumatera Utara</b>
+          <p>Jalan Asrama No. 179 Medan 20123 Indonesia</p>
+        </center>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <!-- MODAL 100 -->
+  <div class="modal fade" id="myModal100" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Jumlah Kegiatan 100%</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <p id="p_modal100"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- MODAL 60-99 -->
+  <div class="modal fade" id="myModal60" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Jumlah Kegiatan 60-99%</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <p id="p_modal100"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- MODAL 30-60 -->
+  <div class="modal fade" id="myModal30" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Jumlah Kegiatan 30-60%</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <p id="p_modal100"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- MODAL 0 -->
+  <div class="modal fade" id="myModal0" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Jumlah Kegiatan < 30%</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <p id="p_modal100"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+
+<script type="text/javascript" src="./home.js"></script>
+<!-- <script type="text/javascript" src="./kegiatan.js"></script> -->
+<script type="text/javascript" src="./beranda.js"></script>
+<script type="text/javascript" src="./sorttable.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+<style>
+  .footer{
+    width: 100%;
+    padding: 30px;
+    margin: auto;
+    background-color: #358F8B;
+    color: white;
+  }
+
+  .kotak{
+    text-align: center;
+  }
+/* .kotak{
+  border-radius: 10px;
+  border-color: black;
+  background-color: white;    
+  width: 22%;
+  padding: 10px;
+  margin: 5px;
+  border: 1px ridge #173B45;
+  height: 140px;
+  display: inline-block;
+  font-size: 12pt;
+  font-weight: 800;
+  text-align: center;
+  line-height: 0.9;
+  margin-bottom: -40px;
+  
+} */
+.kotak:hover {
+  background-color: #0E022A;
+  color: white;
+}
+.kotak_besar{
+  border-radius: 10px;
+  border-color: black;
+  background-color: white;    
+  width: 22%;
+  padding: 10px;
+  margin: 5px;
+  border: 1px ridge #173B45;
+  height: 140px;
+  display: inline-block;
+  font-size: 12pt;
+  font-weight: 800;
+  text-align: center;
+  line-height: 0.9;
+  margin-bottom: -40px;
+  
+}
+.chart {
+  height: 200px;
+}
+#k1,#k2,#k3,#k4,#k5,#k6,#k7,#k8,#k9,#k10{
+  font-size: 36pt;
+  font-weight: 900;
+  letter-spacing: -3px;
+  
+}
+.table_header:hover{
+  cursor: pointer;  
+}
+.table_header:hover{
+  background-color: #0E022A;
+  color: white;
+}
+/* .muncul_tabel{
+  font-size: 12pt;
+} */
+</style>
+</body>
+</html>

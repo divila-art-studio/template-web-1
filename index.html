@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Monitoring Kegiatan BPS Provinsi Sumatera Utara</title>
+    <link rel="icon" type="image/x-icon" href="./image/favicon.ico">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Poor+Story' rel='stylesheet'> -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- FAFONT -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- GRAFIK APEXCHART -->
+     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+     
+     <!-- REACT JS -->
+     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
+     <!-- ANIMATE ON SCROLL -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <!-- JQUERY -->
+     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+     <!-- BOOTSTRAP -->
+     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+     <script>
+      $(function() {
+         $("#header_menu").load("nav.html");
+      });
+   </script>
+   <script>
+    let login_auth = sessionStorage.getItem("status");
+    if (login_auth==null) {
+      location.replace("login.html");
+    } else if (login_auth!=null){
+    }
+   </script>
+     
+     
+</head>
+<body style="font-family: 'Poor Story'">
+  <div class="row">
+    <div class="col-md-2"  id="header_menu" style="background-color: #0E022A;"></div>
+    <div class="col-md-10"><br><br>
+      <center><h1>Selamat Datang! <br>Dashboard Kegiatan Teknis BPS Provinsi Sumatera Utara</h1></center>
+
+      <center><img class="meter" src="./image/meter.png" alt=""></center>
+
+
+
+
+    </div>
+  </div>
+  <div></div>
+
+<script type="text/javascript" src="./home.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+<style>
+  .meter {
+    width: 60%;
+    margin-top: -10px;
+  }
+</style>
+</body>
+</html>

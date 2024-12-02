@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Monitoring Kegiatan BPS Provinsi Sumatera Utara</title>
+    <link rel="icon" type="image/x-icon" href="./image/favicon.ico">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Poor+Story' rel='stylesheet'> -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- FAFONT -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- GRAFIK APEXCHART -->
+     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+     
+     <!-- REACT JS -->
+     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
+     <!-- ANIMATE ON SCROLL -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <!-- JQUERY -->
+     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+     <!-- BOOTSTRAP -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+     <script type="text/javascript">
+      $(function() {
+         $("#header_menu").load("nav.html");
+      });
+   </script>
+   <script>
+    let login_auth = sessionStorage.getItem("status");
+    if (login_auth==null) {
+      location.replace("login.html");
+    } else if (login_auth!=null){
+    }
+   </script>
+     
+     
+</head>
+<body style="font-size: 14pt; background-color: #F2F3F8;">
+  <div class="row">
+    <div class="col-md-2"  id="header_menu" style="background-color: #0E022A;"></div>
+    <div class="col-md-10">
+      <br>
+      &rarr; Progress Tim
+      <br><br>
+      
+      <hr><br>
+      <center><h2 style="background-color: #358F8B; color: white; border-radius: 5px; padding: 10px;">Grafik Progress Tim per Kegiatan</h2></center>
+      <div id="judul_chart1"></div>
+      <div id="chart"></div>
+      
+      <div style="line-height: 2.6; font-size: 11pt;" id="judul_chart"><center><b></b></center></div>
+      <button class="btn btn-primary" id="refresh" style="visibility: hidden;" onclick="refresh();">
+        <h5>Lihat Progress Tim Lain</h5>
+      </button>
+      
+      <div>
+        <form action="#">
+          <select name="tim" id="stim" onchange="ubah1(value);">
+            <option value="">Pilih Tim</option>
+            <option value="tim1">Tim1</option>
+            <option value="tim2">Tim2</option>
+            <option value="tim3">Tim3</option>
+          </select>
+        </form>
+      </div>
+      
+      
+       <br><br><br><br><br><br><br><br><br><br>
+
+       <div class="footer">
+        <center>
+          <b>Copyright © 2025 BPS Provinsi Sumatera Utara</b>
+          <p>Jalan Asrama No. 179 Medan 20123 Indonesia</p>
+        </center>
+      </div>
+
+    </div>
+  </div>
+  <div>
+
+    
+
+  </div>
+<script type="text/javascript" src="./kegiatan.js"></script>
+<script type="text/javascript" src="./sorttable.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+<style>
+  #stim {
+    width: 100%;
+  }
+  .footer{
+    width: 100%;
+    padding: 30px;
+    margin: auto;
+    background-color: #358F8B;
+    color: white;
+  }
+
+  .kotak{
+    text-align: center;
+  }
+/* .kotak{
+  border-radius: 10px;
+  border-color: black;
+  background-color: white;    
+  width: 22%;
+  padding: 10px;
+  margin: 5px;
+  border: 1px ridge #173B45;
+  height: 140px;
+  display: inline-block;
+  font-size: 12pt;
+  font-weight: 800;
+  text-align: center;
+  line-height: 0.9;
+  margin-bottom: -40px;
+  
+} */
+.kotak:hover {
+  background-color: #0E022A;
+  color: white;
+}
+.kotak_besar{
+  border-radius: 10px;
+  border-color: black;
+  background-color: white;    
+  width: 22%;
+  padding: 10px;
+  margin: 5px;
+  border: 1px ridge #173B45;
+  height: 140px;
+  display: inline-block;
+  font-size: 12pt;
+  font-weight: 800;
+  text-align: center;
+  line-height: 0.9;
+  margin-bottom: -40px;
+  
+}
+.chart {
+  height: 200px;
+}
+#k1,#k2,#k3,#k4,#k5,#k6,#k7,#k8,#k9,#k10{
+  font-size: 36pt;
+  font-weight: 900;
+  letter-spacing: -3px;
+  
+}
+.table_header:hover{
+  cursor: pointer;  
+}
+.table_header:hover{
+  background-color: #0E022A;
+  color: white;
+}
+/* .muncul_tabel{
+  font-size: 12pt;
+} */
+</style>
+</body>
+</html>
